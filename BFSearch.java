@@ -33,8 +33,6 @@ public class BFSearch {
         }
     }
 
-
-
     public void BFS(int[][] adjmatrix, int s) {
 
         ArrayList<vertex> graph = new ArrayList<vertex>(adjmatrix.length);
@@ -79,13 +77,9 @@ public class BFSearch {
             graph.add(new vertex("white", Integer.MAX_VALUE, null, (char) (i + 82)));
         }
 
-        print_status_of_vertex(graph, s);
-
         graph.get(s).color = "gray";
         graph.get(s).distance = 0;
         graph.get(s).pi = null;
-
-        print_status_of_vertex(graph, s);
 
         Queue<vertex> queue = new LinkedList<vertex>();
         queue.add(graph.get(s));
@@ -103,7 +97,7 @@ public class BFSearch {
                 }
             }
             u.color = "black";
-            print_status_of_vertex(graph, s);
+
         }
         System.out.println("\n");
         System.out.println("Path from " + graph.get(s).c + " to " + graph.get(t).c + ": ");
